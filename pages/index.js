@@ -9,14 +9,14 @@ import Skills from "../components/skills";
 import Contact from "../components/contact";
 
 
-const Home=memo(()=> {
-  const router = useRouter()
+export default function  Home() {
+  const router = useRouter();
 
-  const [refHeader, inViewHeader] = useInView()
-  const [refServices, inViewServices] = useInView()
-  const [refProjects, inViewProjects] = useInView()
-  const [refSkills, inViewSkills] = useInView()
-  const [refContact, inViewContact] = useInView()
+  const [refHeader, inViewHeader] = useInView();
+  const [refServices, inViewServices] = useInView();
+  const [refProjects, inViewProjects] = useInView();
+  const [refSkills, inViewSkills] = useInView();
+  const [refContact, inViewContact] = useInView();
 
   useEffect(() => {
     // if(inViewHeader){
@@ -45,5 +45,4 @@ const Home=memo(()=> {
       <Contact />
     </main>
   )
-})
-export default Home
+} ;

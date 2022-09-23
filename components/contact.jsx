@@ -1,13 +1,15 @@
-import { useState,useRef } from 'react'
+import { useState, useRef } from 'react'
+import Link from 'next/link'
+
 
 const Contact = () => {
     const [fullName, setfullName] = useState("")
     const [email, setemail] = useState("")
     const [message, setmessage] = useState("")
     const [success, setsuccess] = useState(false)
-const fullNameRef = useRef()
-const emailRef = useRef()
-const messageRef = useRef()
+    const fullNameRef = useRef()
+    const emailRef = useRef()
+    const messageRef = useRef()
 
 
     const handleSubmit = (e) => {
@@ -29,9 +31,9 @@ const messageRef = useRef()
                 setfullName("")
                 setemail("")
                 setmessage("")
-                messageRef.current.value=""
-                fullNameRef.current.value=""
-                emailRef.current.value=""
+                messageRef.current.value = ""
+                fullNameRef.current.value = ""
+                emailRef.current.value = ""
             }
 
         })
@@ -70,7 +72,7 @@ const messageRef = useRef()
                     <div>
                         <h2 className="z-10 sm:text-4xl lg:text-6xl text-2xl font-bold leading-tight">Lets Get In Touch!</h2>
                         <div className="z-10 text-gray-700 mt-8">
-                            Hate forms? Contact me on WhatsApp  <a href='https://web.whatsapp.com/send?phone=+21694355732' className="z-10 underline font-semibold">+216 94355732</a>.
+                            Hate forms? Contact me on WhatsApp  <Link href='https://web.whatsapp.com/send?phone=+21694355732' className="z-10 underline font-semibold">+216 94355732</Link>.
                         </div>
                     </div>
                     <div className="z-10 mt-8 text-center">
@@ -575,24 +577,24 @@ const messageRef = useRef()
                     <div>
                         <span className="z-10 uppercase text-sm text-gray-600 font-bold">Full Name</span>
                         <input ref={fullNameRef} onChange={(e) => setfullName(e.target.value)} className="z-10 z-10 w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                            type="text"  />
+                            type="text" />
                     </div>
                     <div className="z-10 mt-8">
                         <span className="z-10 uppercase text-sm text-gray-600 font-bold">Email</span>
                         <input ref={emailRef} className="z-10 w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                            type="text"  />
+                            type="text" />
                     </div>
                     <div className="z-10 mt-8 mb-8">
                         <span className="z-10 uppercase text-sm text-gray-600 font-bold">Message</span>
                         <textarea
-                        ref={messageRef}
+                            ref={messageRef}
                             className="z-10 w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
                     </div>
-                    {success && 
-                    <div class=" mb-2 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative text-center" role="alert">
-                        <strong class="font-bold">Thanks !</strong>
-                        <span class="block sm:inline">Your message has been send successfully.</span>
-                    </div>
+                    {success &&
+                        <div class=" mb-2 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative text-center" role="alert">
+                            <strong class="font-bold">Thanks !</strong>
+                            <span class="block sm:inline">Your message has been send successfully.</span>
+                        </div>
                     }
                     <div className="z-10">
                         <button style={{ background: "#2E90E1" }} type="submit"
