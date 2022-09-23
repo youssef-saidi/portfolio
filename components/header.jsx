@@ -8,27 +8,27 @@ import Link from 'next/link'
 const Header = () => {
     return (
         <section className="z-10 grid lg:grid-cols-2 grid-cols-1  pt-48 md:px-24 justify-items-center">
-            <div className="z-10 flex flex-col lg:items-start items-center" data-aos="fade-right" data-aos-duration="4000"  data-aos-easing="ease-out-cubic">
+            <div className="z-10 flex flex-col lg:items-start items-center" data-aos="fade-right" data-aos-duration="4000" data-aos-easing="ease-out-cubic">
                 <h1 className="z-10 font-extrabold text-3xl z-40" >Hi ! I’m Youssef Saidi</h1>
                 <h2 className="z-10 font-semibold text-primary text-header mt-2">A Freelance Web Developer</h2>
                 <p className="z-10 font-extralight text-base pt-6 lg:text-start text-center">I&quot;m a highly motivated full-stack web developer/designer with a great passion for creating simple, clean and handy codes. I&quot;m blessed with a good eye for colors composition and typography.
                     Punctual and open-minded developer who adapts easily to various environments and who is open to work alone or in team.</p>
                 <div className="z-10 grid grid-cols-2 lg:justify-items-start justify-items-center w-3/4 mt-5">
-                    <Link href="/SaidiYoussef.pdf"  >
-                        <a download={"CV-Saidi-Youssef"} >
-                       <Button title="Download CV" color={"#F5F5F5"} bgcolor={"#2E90E1"} fill={"#232C33"} />
-                       </a>
-                    </Link>
+                    {/* <Link  > */}
+                    <a href="/SaidiYoussef.pdf" download={"CV-Saidi-Youssef"}  >
+                        <Button title="Download CV" color={"#F5F5F5"} bgcolor={"#2E90E1"} fill={"#232C33"} />
+                    </a>
+                    {/* </Link> */}
                     <Link href="/#contact">
                         <a >
-                        <Button title="Contact Me" color={"#F5F5F5"} bgcolor={"#232C33"} fill={"#2E90E1"} />
+                            <Button title="Contact Me" color={"#F5F5F5"} bgcolor={"#232C33"} fill={"#2E90E1"} />
                         </a>
                     </Link>
                 </div>
 
             </div>
 
-            <div className="z-10 relative flex items-center lg:justify-self-end lg:-top-16 top-16" data-aos="fade-left" data-aos-duration="4000"  data-aos-easing="ease-out-cubic">
+            <div className="z-10 relative flex items-center lg:justify-self-end lg:-top-16 top-16" data-aos="fade-left" data-aos-duration="4000" data-aos-easing="ease-out-cubic">
                 <Image className="z-20" alt="Youssef Saidi" src={"/me.png"} height="450" width={350} />
                 <svg className="z-10 absolute -top-6 -left-24 z-0 " width="522" height="510" viewBox="0 0 522 510" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g filter="url(#filter0_d_3_29)">
