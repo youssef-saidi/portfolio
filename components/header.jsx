@@ -14,11 +14,15 @@ const Header = () => {
                 <p className="z-10 font-extralight text-base pt-6 lg:text-start text-center">I&quot;m a highly motivated full-stack web developer/designer with a great passion for creating simple, clean and handy codes. I&quot;m blessed with a good eye for colors composition and typography.
                     Punctual and open-minded developer who adapts easily to various environments and who is open to work alone or in team.</p>
                 <div className="z-10 grid grid-cols-2 lg:justify-items-start justify-items-center w-3/4 mt-5">
-                    <Link href="/SaidiYoussef.pdf" download="Cv-Saidi_Youssef.pdf">
-                        <Button title="Download CV" color={"#F5F5F5"} bgcolor={"#2E90E1"} fill={"#232C33"} />
+                    <Link href="/SaidiYoussef.pdf"  >
+                        <a download={"CV-Saidi-Youssef"} >
+                       <Button title="Download CV" color={"#F5F5F5"} bgcolor={"#2E90E1"} fill={"#232C33"} />
+                       </a>
                     </Link>
                     <Link href="/#contact">
+                        <a >
                         <Button title="Contact Me" color={"#F5F5F5"} bgcolor={"#232C33"} fill={"#2E90E1"} />
+                        </a>
                     </Link>
                 </div>
 

@@ -48,8 +48,7 @@ body {
   padding: 0;
   margin: 0;
   /* font-family: 'Roboto', sans-serif; */
-
-
+  font-family: 'Poppins', sans-serif !important;
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
@@ -314,24 +313,12 @@ body {
   opacity: 1;
 }
 
-/* #tsparticles > canvas{
-  z-index: -10 !important;
-} */
+
 
 
 /* ------ 3D SKills----------*/
 
-.icons-container {
-  /* position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  padding: 0; */
-  /* display: flex;
-align-items: center; */
-  /* background-color: gray; */
-}
+
 
 .icons-container li {
   list-style: none;

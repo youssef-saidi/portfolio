@@ -8,9 +8,11 @@ const CardCaroussel = ({ url, img }) => {
     return (
         <div className="z-10 flex items-center justify-center cardHover z-10">
             <Image src={img} height={200} width={400} />
-            <Link href={url} className="z-10 middle">
-                <Button title="Link" color={"#F5F5F5"} bgcolor={"#232C33"} fill={"#2E90E1"} />
-            </Link>
+            <div className='middle z-10'>
+                <Link href={url}>
+                    <Button title="Link" color={"#F5F5F5"} bgcolor={"#232C33"} fill={"#2E90E1"} />
+                </Link>
+            </div>
         </div>
 
     )

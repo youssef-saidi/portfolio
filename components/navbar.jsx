@@ -41,20 +41,20 @@ const Navbar = () => {
                     <div className="z-10 flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
                         <div className="z-10 hidden sm:ml-16 sm:block">
                             <ul className="z-10 flex space-x-8 list-none">
-                                <li className={router.asPath == "/" ? "active" : "text-black "}>
-                                    <Link href="/" className="z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider" aria-current="page">Portfolio</Link>
+                                <li className={router.asPath == "/" ? "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider active" : "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider text-black "}>
+                                    <Link href="/"  aria-current="page">Portfolio</Link>
                                 </li>
-                                <li className={router.asPath == "/#services" ? "active" : "text-black "}>
-                                    <Link href="/#services" className="z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider">Services</Link>
+                                <li className={router.asPath == "/#services" ? "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider active" : "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider text-black "}>
+                                    <Link href="/#services" >Services</Link>
                                 </li>
-                                <li className={router.asPath == "/#skills" ? "active" : "text-black "}>
-                                    <Link href="/#skills" className="z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider">Skills</Link>
+                                <li className={router.asPath == "/#skills" ? "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider active" : "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider text-black "}>
+                                    <Link href="/#skills" >Skills</Link>
                                 </li>
-                                <li className={router.asPath == "/#projects" ? "active" : "text-black "}>
-                                    <Link href="/#projects" className="z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider">Projects</Link>
+                                <li className={router.asPath == "/#projects" ? "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider active" : "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider text-black "}>
+                                    <Link href="/#projects" >Projects</Link>
                                 </li>
-                                <li className={router.asPath == "/#contact" ? "active" : "text-black "}>
-                                    <Link href="/#contact" className="z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider">Contact</Link>
+                                <li className={router.asPath == "/#contact" ? "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider active" : "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider text-black "}>
+                                    <Link href="/#contact" >Contact</Link>
                                 </li>
                             </ul>
                         </div>
@@ -93,15 +93,15 @@ const Navbar = () => {
             {openNav &&
                 <div className="z-10 sm:hidden absolute bg-white w-screen shadow-lg pl-3">
                     <ul className="z-10 space-y-1 px-2 pt-2 pb-3 list-none">
-                        <li className={router.asPath == "/" ? "active" : "text-black"}> <Link href="/" className="z-10 block  py-2 text-base font-semibold tracking-wider" aria-current="page">Portfolio</Link></li>
+                        <li className={router.asPath == "/" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/" aria-current="page">Portfolio</Link></li>
 
-                        <li className={router.asPath == "/#services" ? "active" : "text-black"}> <Link href="/#services" className="z-10 block  py-2 text-base font-semibold tracking-wider">Services</Link></li>
+                        <li className={router.asPath == "/#services" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/#services" >Services</Link></li>
 
-                        <li className={router.asPath == "/skills" ? "active" : "text-black"}> <Link href="/skills" className="z-10 block  py-2 text-base font-semibold tracking-wider">Skills</Link></li>
+                        <li className={router.asPath == "/skills" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/skills" >Skills</Link></li>
 
-                        <li className={router.asPath == "/projects" ? "active" : "text-black"}> <Link href="/projects" className="z-10 block  py-2 text-base font-semibold tracking-wider">Projects</Link></li>
+                        <li className={router.asPath == "/projects" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/projects" >Projects</Link></li>
 
-                        <li className={router.asPath == "/contact" ? "active" : "text-black"}> <Link href="/contact" className="z-10 block  py-2 text-base font-semibold tracking-wider">Contact</Link></li>
+                        <li className={router.asPath == "/contact" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/contact" >Contact</Link></li>
                     </ul>
                 </div>}
         </nav>
