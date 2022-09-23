@@ -581,13 +581,13 @@ const Contact = () => {
                     </div>
                     <div className="z-10 mt-8">
                         <span className="z-10 uppercase text-sm text-gray-600 font-bold">Email</span>
-                        <input ref={emailRef} className="z-10 w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                        <input ref={emailRef}  onChange={(e) => setemail(e.target.value)} className="z-10 w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                             type="text" />
                     </div>
                     <div className="z-10 mt-8 mb-8">
                         <span className="z-10 uppercase text-sm text-gray-600 font-bold">Message</span>
                         <textarea
-                            ref={messageRef}
+                            ref={messageRef}  onChange={(e) => setmessage(e.target.value)}
                             className="z-10 w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
                     </div>
                     {success &&
