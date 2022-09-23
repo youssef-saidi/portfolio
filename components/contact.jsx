@@ -72,7 +72,7 @@ const Contact = () => {
                     <div>
                         <h2 className="z-10 sm:text-4xl lg:text-6xl text-2xl font-bold leading-tight">Lets Get In Touch!</h2>
                         <div className="z-10 text-gray-700 mt-8">
-                            Hate forms? Contact me on WhatsApp  <Link href='https://web.whatsapp.com/send?phone=+21694355732' className="z-10 underline font-semibold">+216 94355732</Link>.
+                            Hate forms? Contact me on WhatsApp  <span  className="z-10 underline font-semibold"><Link href='https://web.whatsapp.com/send?phone=+21694355732'>+216 94355732</Link></span>.
                         </div>
                     </div>
                     <div className="z-10 mt-8 text-center">
