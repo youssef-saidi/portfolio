@@ -266,7 +266,20 @@ body {
     text-shadow: 0 0 2px #232C33;
   }
 }
+.animateNav{
+  animation:animateNav 0.3s linear  ;
+}
+@keyframes animateNav {
+  0% {
+    transform: translateX(-100%);
+  }
 
+
+  100% {
+    transform: translateX(-0%);
+
+  }
+}
 
 
 .slick-slide {

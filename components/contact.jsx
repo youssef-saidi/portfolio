@@ -1,15 +1,20 @@
 import { useState, useRef } from 'react'
 import Link from 'next/link'
 import _ from 'lodash';
+import { useTranslation } from "react-i18next";
+
 
 
 const Contact = () => {
-    const [success, setsuccess] = useState(false)
-    const fullNameRef = useRef()
-    const emailRef = useRef()
-    const messageRef = useRef(),
+    const [success, setsuccess] = useState(false),
+        fullNameRef = useRef(),
+        emailRef = useRef(),
+        messageRef = useRef(),
         [formData, updateFormData] = useState({}),
         [formErrors, updateFormErrors] = useState({});
+        const [t] = useTranslation();
+
+
 
     const handleChange = (e) => {
         updateFormData({
@@ -97,7 +102,7 @@ const Contact = () => {
                 className="z-10 max-w-screen-xl  md:px-8 px-3 grid gap-8 grid-cols-1 md:grid-cols-2 md:px-12 lg:px-16 xl:px-32 py-16 mx-auto bg-gray-100 text-gray-900 rounded-lg shadow-lg">
                 <div className="z-10 flex flex-col justify-between">
                     <div>
-                        <h2 className="z-10 sm:text-4xl lg:text-6xl text-2xl font-bold leading-tight">Lets Get In Touch!</h2>
+                        <h2 className="z-10 sm:text-4xl lg:text-6xl text-2xl font-bold leading-tight">{t('contact2')}</h2>
                         <div className="z-10 text-gray-700 mt-8">
                             Hate forms? Contact me on WhatsApp  <span className="z-10 underline font-semibold"><Link href='https://web.whatsapp.com/send?phone=+21694355732'>+216 94355732</Link></span>.
                         </div>
@@ -602,7 +607,7 @@ const Contact = () => {
                 </div>
                 <form className="z-10" onSubmit={handleSubmit}>
                     <div>
-                        <span className="z-10 uppercase text-sm text-gray-600 font-bold">Full Name</span>
+                        <span className="z-10 uppercase text-sm text-gray-600 font-bold">{t('contact1')}</span>
                         <input ref={fullNameRef} onChange={handleChange} className="z-10 w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
                             type="text" name='fullName' />
                     </div>

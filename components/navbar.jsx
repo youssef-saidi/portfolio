@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import Link from 'next/link'
-
-
-
 
 
 const Navbar = () => {
     const [openNav, setopenNav] = useState(false);
     const [changeNavbar, setchangeNavbar] = useState(false);
+    const [apparence, setapparence] = useState(false);
+    const [t, i18n] = useTranslation();
+
 
     const router = useRouter();
     useEffect(() => {
@@ -48,10 +49,10 @@ const Navbar = () => {
                                     <Link href="/#services" >Services</Link>
                                 </li>
                                 <li className={router.asPath == "/#skills" ? "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider active" : "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider text-black "}>
-                                    <Link href="/#skills" >Skills</Link>
+                                    <Link href="/#skills" >{t('navbar3')}</Link>
                                 </li>
                                 <li className={router.asPath == "/#projects" ? "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider active" : "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider text-black "}>
-                                    <Link href="/#projects" >Projects</Link>
+                                    <Link href="/#projects" >{t('navbar4')}</Link>
                                 </li>
                                 <li className={router.asPath == "/#contact" ? "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider active" : "z-10 py-2 lg:text-lg text-sm font-semibold tracking-wider text-black "}>
                                     <Link href="/#contact" >Contact</Link>
@@ -87,22 +88,33 @@ const Navbar = () => {
                                 <path d="M 15 3 C 8.373 3 3 8.373 3 15 C 3 17.251208 3.6323415 19.350068 4.7109375 21.150391 L 3.1074219 27 L 9.0820312 25.431641 C 10.829354 26.425062 12.84649 27 15 27 C 21.627 27 27 21.627 27 15 C 27 8.373 21.627 3 15 3 z M 10.892578 9.4023438 C 11.087578 9.4023438 11.287937 9.4011562 11.460938 9.4101562 C 11.674938 9.4151563 11.907859 9.4308281 12.130859 9.9238281 C 12.395859 10.509828 12.972875 11.979906 13.046875 12.128906 C 13.120875 12.277906 13.173313 12.453437 13.070312 12.648438 C 12.972312 12.848437 12.921344 12.969484 12.777344 13.146484 C 12.628344 13.318484 12.465078 13.532109 12.330078 13.662109 C 12.181078 13.811109 12.027219 13.974484 12.199219 14.271484 C 12.371219 14.568484 12.968563 15.542125 13.851562 16.328125 C 14.986562 17.342125 15.944188 17.653734 16.242188 17.802734 C 16.540187 17.951734 16.712766 17.928516 16.884766 17.728516 C 17.061766 17.533516 17.628125 16.864406 17.828125 16.566406 C 18.023125 16.268406 18.222188 16.319969 18.492188 16.417969 C 18.766188 16.515969 20.227391 17.235766 20.525391 17.384766 C 20.823391 17.533766 21.01875 17.607516 21.09375 17.728516 C 21.17075 17.853516 21.170828 18.448578 20.923828 19.142578 C 20.676828 19.835578 19.463922 20.505734 18.919922 20.552734 C 18.370922 20.603734 17.858562 20.7995 15.351562 19.8125 C 12.327563 18.6215 10.420484 15.524219 10.271484 15.324219 C 10.122484 15.129219 9.0605469 13.713906 9.0605469 12.253906 C 9.0605469 10.788906 9.8286563 10.071437 10.097656 9.7734375 C 10.371656 9.4754375 10.692578 9.4023438 10.892578 9.4023438 z"></path>
                             </svg>
                         </a>
+                        <div className="flex flex-col relative cursor-pointer">
+                            <div className="flex flex-row items-center justify-center mx-3" onClick={() => { setapparence(!apparence) }}>
+                                <h1 className="text-xs uppercase font-semibold">{i18n.language}</h1>
+                                <img className="h-3 w-3 ml-4" src="https://img.icons8.com/metro/26/000000/expand-arrow.png" alt="" />
+                            </div>
+                            {apparence &&
+                                <div className="border border-current divide-y-2 absolute font-semibold text-xs flex flex-col top-5 left-1 w-16 cursor-pointer" style={{ backgroundColor: "#F5F5F5" }}>
+                                    <h1 className="px-2 py-1 hover:bg-slate-100" onClick={() => { setapparence(false); i18n.changeLanguage('fr'); }}>FR</h1>
+                                    <h1 className="px-2 py-1 hover:bg-slate-100" onClick={() => { setapparence(false); i18n.changeLanguage('en'); }}>EN</h1>
+                                </div>}
+                        </div>
                     </div>
                 </div>
             </div>
 
             {openNav &&
-                <div className="z-10 sm:hidden absolute bg-white w-screen shadow-lg pl-3">
+                <div className="z-10 sm:hidden absolute bg-white w-screen shadow-lg pl-3 animateNav">
                     <ul className="z-10 space-y-1 px-2 pt-2 pb-3 list-none">
-                        <li className={router.asPath == "/" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/" aria-current="page">Portfolio</Link></li>
+                        <li onClick={() => setopenNav(false)} className={router.asPath == "/" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/" aria-current="page">Portfolio</Link></li>
 
-                        <li className={router.asPath == "/#services" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/#services" >Services</Link></li>
+                        <li onClick={() => setopenNav(false)} className={router.asPath == "/#services" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/#services" >Services</Link></li>
 
-                        <li className={router.asPath == "/skills" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/skills" >Skills</Link></li>
+                        <li onClick={() => setopenNav(false)} className={router.asPath == "/#skills" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/#skills" >{t('navbar3')}</Link></li>
 
-                        <li className={router.asPath == "/projects" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/projects" >Projects</Link></li>
+                        <li onClick={() => setopenNav(false)} className={router.asPath == "/#projects" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/#projects" >{t('navbar4')}</Link></li>
 
-                        <li className={router.asPath == "/contact" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/contact" >Contact</Link></li>
+                        <li onClick={() => setopenNav(false)} className={router.asPath == "/#contact" ? "active z-10 block  py-2 text-base font-semibold tracking-wider" : "text-black z-10 block  py-2 text-base font-semibold tracking-wider"}> <Link href="/#contact" >Contact</Link></li>
                     </ul>
                 </div>}
         </nav>

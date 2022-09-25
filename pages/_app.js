@@ -4,6 +4,7 @@ import Particles from "react-tsparticles";
 import AOS from 'aos';
 import { useEffect } from 'react'
 import "aos/dist/aos.css";
+import '../i18next';
 
 
 function MyApp({ Component, pageProps }) {
