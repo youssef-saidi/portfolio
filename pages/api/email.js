@@ -1,10 +1,13 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
+import _ from 'lodash';
 
 export default async function handler(req, res) {
   let nodemailer = require('nodemailer');
-
-  const { name, email, message } = req.body;
   console.log(req.body)
+  const { fullName, email, message } = req.body;
+  if (_.isUndefined(fullName) || _.isUndefined(email) || _.isUndefined(message)) res.status(400).json({ success: false });
+
+
 
   var transporter = await nodemailer.createTransport({
     host: 'smtp.gmail.com',
@@ -22,18 +25,18 @@ export default async function handler(req, res) {
     from: "youssefsaidi869@gmail.com",
     to: 'youssefsaidi869@gmail.com',
     subject: 'Portfolio Email',
-    text: `Name:${name} \n Email:${email}  \n Message:${message}`,
+    text: `Name:${fullName} \n Email:${email}  \n Message:${message}`,
     // html: `<strong>Name:</strong>${Name} <br/> <strong>Email:</strong>${Email} <br/> <strong>Phone:</strong>${Phone} <br/> <strong>Message:</strong>${Message} <br/>`, 
   };
-    transporter.sendMail(mailOptions, function (error, info) {
-console.log(error)
-      if (error) {
-        res.status(400).json({ success: false });
-      } else {
-        res.status(200).json({ success: true });
-      }
-    });
-  
+  transporter.sendMail(mailOptions, function (error, info) {
+    console.log(error)
+    if (error) {
+      res.status(400).json({ success: false });
+    } else {
+      res.status(200).json({ success: true });
+    }
+  });
+
 
 
 }

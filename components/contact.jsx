@@ -1,26 +1,43 @@
 import { useState, useRef } from 'react'
 import Link from 'next/link'
+import _ from 'lodash';
 
 
 const Contact = () => {
-    const [fullName, setfullName] = useState("")
-    const [email, setemail] = useState("")
-    const [message, setmessage] = useState("")
     const [success, setsuccess] = useState(false)
     const fullNameRef = useRef()
     const emailRef = useRef()
-    const messageRef = useRef()
+    const messageRef = useRef(),
+        [formData, updateFormData] = useState({}),
+        [formErrors, updateFormErrors] = useState({});
 
+    const handleChange = (e) => {
+        updateFormData({
+            ...formData,
+            [e.target.name]: e.target.value.trim()
+        });
+    };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
+        let errors = {};
         setsuccess(false)
-        fetch('api/email', {
+        if (_.isEmpty(formData.fullName)) errors = { ...errors, fullName: ' Name is required' };
+        if (_.isEmpty(formData.email)) errors = { ...errors, email: 'Email is required' };
+        if (_.isEmpty(formData.message)) errors = { ...errors, message: 'Message is required' };
+
+        updateFormErrors(errors);
+
+        if (!_.isEmpty(errors)) return; //Skip the rest.
+
+
+
+        await fetch('api/email', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({ name: fullName, email: email, message: message })
+            body: JSON.stringify(formData)
         }).then(res => {
             if (res.status === 200) {
                 setsuccess(true)
@@ -28,17 +45,27 @@ const Contact = () => {
                 setTimeout(() => {
                     setsuccess(false)
                 }, 7000);
-                setfullName("")
-                setemail("")
-                setmessage("")
+
                 messageRef.current.value = ""
                 fullNameRef.current.value = ""
                 emailRef.current.value = ""
+            } else {
+                errors = { ...errors, error: 'Something went wrong please try again later.' }
+                return updateFormErrors(errors);
             }
 
         })
-            .catch(err => console.log(err))
+            .catch(err => {
+                errors = { ...errors, error: 'Something went wrong please try again later.' }
+                return updateFormErrors(errors);
+            })
 
+    }
+    const displayError = (key) => {
+        if (!_.isEmpty(formErrors[key])) return <div class="my-2 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative text-center" role="alert">
+            <strong class="font-bold">Error ! </strong>
+            <span class="block sm:inline">{formErrors[key]}</span>
+        </div>
     }
     return (
 
@@ -72,7 +99,7 @@ const Contact = () => {
                     <div>
                         <h2 className="z-10 sm:text-4xl lg:text-6xl text-2xl font-bold leading-tight">Lets Get In Touch!</h2>
                         <div className="z-10 text-gray-700 mt-8">
-                            Hate forms? Contact me on WhatsApp  <span  className="z-10 underline font-semibold"><Link href='https://web.whatsapp.com/send?phone=+21694355732'>+216 94355732</Link></span>.
+                            Hate forms? Contact me on WhatsApp  <span className="z-10 underline font-semibold"><Link href='https://web.whatsapp.com/send?phone=+21694355732'>+216 94355732</Link></span>.
                         </div>
                     </div>
                     <div className="z-10 mt-8 text-center">
@@ -576,26 +603,35 @@ const Contact = () => {
                 <form className="z-10" onSubmit={handleSubmit}>
                     <div>
                         <span className="z-10 uppercase text-sm text-gray-600 font-bold">Full Name</span>
-                        <input ref={fullNameRef} onChange={(e) => setfullName(e.target.value)} className="z-10 z-10 w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                            type="text" />
+                        <input ref={fullNameRef} onChange={handleChange} className="z-10 w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                            type="text" name='fullName' />
                     </div>
+                    {displayError('fullName')}
+
                     <div className="z-10 mt-8">
                         <span className="z-10 uppercase text-sm text-gray-600 font-bold">Email</span>
-                        <input ref={emailRef}  onChange={(e) => setemail(e.target.value)} className="z-10 w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
-                            type="text" />
+                        <input ref={emailRef} onChange={handleChange} className="z-10 w-full bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"
+                            type="text" name='email' />
                     </div>
-                    <div className="z-10 mt-8 mb-8">
+                    {displayError('email')}
+
+                    <div className="z-10 mt-8 ">
                         <span className="z-10 uppercase text-sm text-gray-600 font-bold">Message</span>
                         <textarea
-                            ref={messageRef}  onChange={(e) => setmessage(e.target.value)}
+                            ref={messageRef} onChange={handleChange}
+                            name="message"
                             className="z-10 w-full h-32 bg-gray-300 text-gray-900 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"></textarea>
                     </div>
+                    {displayError('message')}
+
                     {success &&
-                        <div class=" mb-2 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative text-center" role="alert">
-                            <strong class="font-bold">Thanks !</strong>
+                        <div class="mb-2 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative text-center" role="alert">
+                            <strong class="font-bold">Thanks ! </strong>
                             <span class="block sm:inline">Your message has been send successfully.</span>
                         </div>
                     }
+                    {displayError('error')}
+
                     <div className="z-10">
                         <button style={{ background: "#2E90E1" }} type="submit"
                             className="z-10 uppercase text-sm font-bold tracking-wide  text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
