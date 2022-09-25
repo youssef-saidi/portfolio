@@ -13,7 +13,7 @@ const Header = () => {
     return (
         <section className="z-10 grid lg:grid-cols-2 grid-cols-1  pt-48 md:px-24 justify-items-center">
             <div className="z-10 flex flex-col lg:items-start items-center" data-aos="fade-right" data-aos-duration="4000" data-aos-easing="ease-out-cubic">
-                <h1 className="z-10 font-extrabold text-3xl z-40" >Hi ! I’m Youssef Saidi</h1>
+                <h1 className="z-10 font-extrabold text-3xl z-40" >{t('header')} Youssef Saidi</h1>
                 <h2 className="z-10 font-semibold text-primary text-header mt-2">{t('header1')}</h2>
                 <p className="z-10 font-extralight text-base pt-6 lg:text-start text-center">{t('header2')}</p>
                 <div className="z-10 grid grid-cols-2 lg:justify-items-start justify-items-center w-3/4 mt-5">
