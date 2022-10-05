@@ -40,7 +40,7 @@ export default function Home() {
         <Services />
         <div ref={refSkills} id="skills" className="pt-24"></div>
         <Skills />
-        <div ref={refProjects} id="projects"></div>
+        <div ref={refProjects} id="projects" className="pt-24"></div>
         <Caroussel3D />
         <div ref={refContact} id="contact"></div>
         <Contact />
