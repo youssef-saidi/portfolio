@@ -4,6 +4,7 @@ import _ from 'lodash';
 import { useTranslation } from "react-i18next";
 
 
+const validateEmail = (email) => email.match(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
 
 const Contact = () => {
     const [success, setsuccess] = useState(false),
@@ -12,7 +13,7 @@ const Contact = () => {
         messageRef = useRef(),
         [formData, updateFormData] = useState({}),
         [formErrors, updateFormErrors] = useState({});
-        const [t] = useTranslation();
+    const [t] = useTranslation();
 
 
 
@@ -640,7 +641,7 @@ const Contact = () => {
                     <div className="z-10">
                         <button style={{ background: "#2E90E1" }} type="submit"
                             className="z-10 uppercase text-sm font-bold tracking-wide  text-gray-100 p-3 rounded-lg w-full focus:outline-none focus:shadow-outline">
-                            Send Message
+                            {t('button3')}
                         </button>
                     </div>
                 </form>

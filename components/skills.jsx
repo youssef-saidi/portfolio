@@ -1,11 +1,14 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 import Title from './title'
 
 const Skills = () => {
+    const [t] = useTranslation();
+
     return (
         <section className='flex-col items-center justify-center'>
             <div className='flex flex-col cursor-pointer items-center '>
-                <Title title="My Skills" color="textAnimateblack" />
+                <Title title={t('title1')} color="textAnimateblack" />
             </div>
             <ul className='icons-container grid lg:grid-cols-6 grid-cols-3 justify-items-center z-10 mb-16 sm:mx-24'>
                 <li  data-aos="fade-down" data-aos-duration="2000"  data-aos-easing="ease-out-cubic"  >

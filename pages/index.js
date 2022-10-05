@@ -1,5 +1,5 @@
 
-import { memo, useEffect  } from "react";
+import { memo, useEffect } from "react";
 import Caroussel3D from "../components/caroussel/Caroussel3D"
 import Services from "../components/services";
 import Header from "../components/header";
@@ -9,7 +9,7 @@ import Skills from "../components/skills";
 import Contact from "../components/contact";
 
 
-export default function  Home() {
+export default function Home() {
   const router = useRouter();
 
   const [refHeader, inViewHeader] = useInView();
@@ -30,19 +30,21 @@ export default function  Home() {
     // }else if (inViewContact) {
     //   router.push('/#contact')
     // }
-  }, [inViewHeader,inViewServices,inViewSkills,inViewProjects,inViewContact]);
+  }, [inViewHeader, inViewServices, inViewSkills, inViewProjects, inViewContact]);
   return (
     <main className="z-10 ">
-      <div ref={refHeader} id="header" ></div>
-      <Header />
-      <div ref={refServices} id="services"></div>
-      <Services />
-      <div ref={refSkills} id="skills"></div>
-      <Skills />
-      <div ref={refProjects} id="projects"></div>
-      <Caroussel3D />
-      <div ref={refContact} id="contact"></div>
-      <Contact />
+      <>
+        <div ref={refHeader} id="header" ></div>
+        <Header />
+        <div ref={refServices} id="services"></div>
+        <Services />
+        <div ref={refSkills} id="skills"></div>
+        <Skills />
+        <div ref={refProjects} id="projects"></div>
+        <Caroussel3D />
+        <div ref={refContact} id="contact"></div>
+        <Contact />
+      </>
     </main>
   )
-} ;
+};

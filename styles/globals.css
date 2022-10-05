@@ -6,7 +6,7 @@
 
 :root {
   --colorBlack: #232C33;
-  --colorBlue: #2E90E1;
+  --colorBlue: #2580ca;
   --colorWhite: #F5F5F5;
 }
 
@@ -60,12 +60,14 @@ body {
 .bg-primary {
   background-color: var(--colorBlack);
 }
-
+.bg-White{
+  background-color: var(--colorWhite);
+}
 .text-white {
   color: var(--colorWhite);
 }
 
-.text-header {
+.text-animationeader {
   line-height: 28px;
   letter-spacing: 0.05em;
   color: #232C33;
@@ -266,9 +268,11 @@ body {
     text-shadow: 0 0 2px #232C33;
   }
 }
-.animateNav{
-  animation:animateNav 0.3s linear  ;
+
+.animateNav {
+  animation: animateNav 0.3s linear;
 }
+
 @keyframes animateNav {
   0% {
     transform: translateX(-100%);
@@ -391,4 +395,116 @@ body {
 .icons-container li span:hover>h1 {
   display: block;
 
+}
+
+
+/* -----------Preloader--------------- */
+
+.text-animation {
+  position: relative;
+  color: rgb(158, 158, 158);
+  /* border-bottom: 5px solid #222; */
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+.text-animation::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  color: var(--colorBlue);
+  /* border-bottom: 5px solid white; */
+  animation: animate 3.5s linear infinite;
+}
+
+@keyframes animate {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+
+.square {
+  width: 12px;
+  height: 12px;
+  border-radius: 4px;
+  background-color: var(--colorBlue);
+}
+
+.load-square .square {
+  animation: loadingG 3s cubic-bezier(0.17, 0.37, 0.43, 0.67) infinite;
+}
+
+@keyframes loadingG {
+  0% {
+    transform: translate(-70px, 0) rotate(0deg);
+  }
+
+  50% {
+    transform: translate(70px, 0) rotate(360deg);
+  }
+
+  100% {
+    transform: translate(-70px, 0) rotate(0deg);
+  }
+}
+
+.spinner {
+  position: relative;
+  width: 45px;
+  height: 45px;
+  margin: 0 auto;
+}
+
+.bubble-1,
+.bubble-2 {
+  position: absolute;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  background-color: var(--colorBlue);
+}
+
+.bubble-2 {
+  top: auto;
+  bottom: 0;
+}
+
+.load-bubble .spinner {
+  animation: loadingI 2s linear infinite;
+}
+
+.load-bubble .bubble-1,
+.load-bubble .bubble-2 {
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.load-bubble .bubble-2 {
+  animation-delay: -1s;
+}
+
+@keyframes loadingI {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
 }

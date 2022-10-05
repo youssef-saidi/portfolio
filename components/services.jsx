@@ -1,8 +1,12 @@
 import React from 'react'
+import { useTranslation } from 'react-i18next';
 import Card from './services/card'
 import Title from './title'
 
+
 const Services = () => {
+  const [t] = useTranslation();
+
   return (
     <section className='relative pt-16' >
       <svg className='relative 2xl:top-6 xl:top-7 lg:top-9 md:top-10 sm:top-12 top-14' width="100%" height="118" viewBox="0 0 2360 118" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -15,10 +19,10 @@ const Services = () => {
       </svg>
 
       <div className='bg-primary py-36 flex flex-col items-center'>
-        <Title title="My Services" color="textAnimateWhite" />
+        <Title title={t('title2')} color="textAnimateWhite" />
         <div className='grid md:grid-cols-2 grid-cols-1 justify-items-center z-10'>
-          <Card img={"/webDesign.png"} title={"Web Design"} description={"Web Designer with a passion for designing clean and functional websites and user interfaces."} />
-          <Card img={"/webDev.png"} title={"Web Dev"} description={"Full stack Developer with experience coding Html, Css ,JavaScript , ReactJS NodeJs.... I always aim to deliver a clean ,elegant and efficient code."} /> 
+          <Card img={"/webDesign.png"} title={"Web Design"} description={t('service1')} />
+          <Card img={"/webDev.png"} title={"Web Dev"} description={t('service2')} /> 
         </div>
       </div>
       <svg className='absolute bottom-48 left-0 ' width="96" height="165" viewBox="0 0 96 165" fill="none" xmlns="http://www.w3.org/2000/svg">

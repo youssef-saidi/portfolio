@@ -1,10 +1,12 @@
 import { useRef, useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import Slider from "react-slick";
 import Title from "../title";
 import CardCaroussel from "./cardCaroussel";
 import NextArrow from "./NextArrow";
 import PreviousArrow from "./PreviousArrow";
 function Caroussel3D() {
+  const [t] = useTranslation();
 
   const [slide, setSlide] = useState()
   const sliderRef = useRef();
@@ -52,7 +54,7 @@ function Caroussel3D() {
   };
   return (
     <section className="z-10 bg-primary py-16 flex flex-col items-center">
-      <Title title="My Projects" color="textAnimateWhite" />
+      <Title title={t('title3')} color="textAnimateWhite" />
       <div className="z-10 w-full" >
         <Slider
           ref={sliderRef}

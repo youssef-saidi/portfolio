@@ -1,9 +1,18 @@
 {
     "navbar3": "Compétences",
     "navbar4": "Projets",
-    "header":"Salut je suis",
-    "header1":"Freelance Développeur web",
-    "header2":"Je suis un développeur / concepteur web complet très motivé avec une grande passion pour la création de codes simples, propres et pratiques. Je suis béni avec un bon oeil pour la composition des couleurs et la typographie. Développeur ponctuel et ouvert d’esprit qui s’adapte facilement aux différents environnements et qui est ouvert au travail seul ou en équipe.",
+    "button1": "Contacter Moi",
+    "button2": "Telecharger CV",
+    "button3": "ENVOYER MESSAGE",
+    "service1": "Web Designer avec une passion pour la conception de sites Web et d’interfaces utilisateur propres et fonctionnels",
+    "service2": "Développeur  Full Satck avec expérience de codage Html, Css ,JavaScript , ReactJS NodeJs... Je vise toujours à fournir un code propre, élégant et efficace.",
+    "header": "Salut je suis",
+    "header1": "Freelance Développeur web",
+    "header2": "Je suis un développeur / concepteur web fullStack très motivé avec une grande passion pour la création de codes simples, propres et pratiques. Je suis béni avec un bon oeil pour la composition des couleurs et la typographie. Développeur ponctuel et ouvert d’esprit qui s’adapte facilement aux différents environnements et qui est ouvert au travail seul ou en équipe.",
     "contact1": "NOM ET PRÉNOM",
-    "contact2": "Mettons-nous en contact !"
+    "contact2": "Mettons-nous en contact !",
+    "title1":"Mes Compétences",
+    "title2":"Mes Services",
+    "title3":"Mes Projets"
+
 }
