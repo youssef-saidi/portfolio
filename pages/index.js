@@ -38,7 +38,7 @@ export default function Home() {
         <Header />
         <div ref={refServices} id="services"></div>
         <Services />
-        <div ref={refSkills} id="skills"></div>
+        <div ref={refSkills} id="skills" className="pt-24"></div>
         <Skills />
         <div ref={refProjects} id="projects"></div>
         <Caroussel3D />
