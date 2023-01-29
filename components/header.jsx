@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 
 const Header = () => {
-    const [t] = useTranslation();
+    const [t,i18n] = useTranslation();
 
     return (
         <section className="z-10 grid lg:grid-cols-2 grid-cols-1  pt-48 md:px-24 justify-items-center">
@@ -17,7 +17,7 @@ const Header = () => {
                 <h2 className="z-10 font-semibold text-primary text-header mt-2">{t('header1')}</h2>
                 <p className="z-10 font-extralight text-base pt-6 lg:text-start text-center">{t('header2')}</p>
                 <div className="z-10 grid grid-cols-2 lg:justify-items-start justify-items-center w-3/4 mt-5">
-                    <a href="/SaidiYoussef.pdf" download={"CV-Saidi-Youssef"}  >
+                    <a href={i18n.language==="en" ?"/SaidiYoussefEN.pdf":"/SaidiYoussefFR.pdf"} download={"CV-Saidi-Youssef"}  >
                         <Button title={t('button2')} color={"#F5F5F5"} bgcolor={"#2E90E1"} fill={"#232C33"} />
                     </a>
                     <Link href="/#contact">
