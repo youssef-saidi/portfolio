@@ -22,7 +22,7 @@ const Navbar = () => {
     });
 
     return (
-        <nav className={`bg-white w-screen fixed z-30 ${changeNavbar && "shadow-lg"} `}>
+        <nav className={`bg-white w-screen fixed z-40 ${changeNavbar && "shadow-lg"} `}>
             <div className="z-10 mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div className="z-10 relative flex h-16 items-center justify-between">
                     <div className="z-10 absolute inset-y-0 left-0 flex items-center sm:hidden">
