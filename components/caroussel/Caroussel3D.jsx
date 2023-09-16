@@ -59,11 +59,12 @@ function Caroussel3D() {
         <Slider
           ref={sliderRef}
           {...settings}>
-          <CardCaroussel url={"https://www.nourrisson-diffusion.fr/"} img={"/nourrisonTN.PNG"} />
+          <CardCaroussel url={"https://hdsg.vercel.app/"} img={"/hdbc.png"} />
+          <CardCaroussel url={"https://www.nourrisson-tunisie.tn/"} img={"/nourrisonTN.PNG"} />
           <CardCaroussel url={"https://carbonbasenft.com/"} img={"/nft.PNG"} />
-          <CardCaroussel url={"https://www.nourrisson-tunisie.tn/"} img={"/nourrisonFR.PNG"} />
           <CardCaroussel url={"https://mourouj-sport.herokuapp.com/"} img={"/ms.PNG"} />
-    
+          <CardCaroussel url={"https://www.nourrisson-diffusion.fr/"} img={"/nourrisonFR.PNG"} />
+
 
 
 

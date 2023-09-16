@@ -1,6 +1,7 @@
 import React from 'react'
 import { useTranslation } from 'react-i18next';
 import Title from './title'
+import OneSkills from './skills/OneSkills';
 
 const Skills = () => {
     const [t] = useTranslation();
@@ -11,81 +12,47 @@ const Skills = () => {
                 <Title title={t('title1')} color="textAnimateblack" />
             </div>
             <ul className='icons-container grid lg:grid-cols-6 grid-cols-3 justify-items-center z-10 mb-16 sm:mx-24'>
-                <li  data-aos="fade-down" data-aos-duration="2000"  data-aos-easing="ease-out-cubic"  >
-                    <span href="" className='z-10 px-3 py-1 my-5 hover:bg-orange-500 hover:after:bg-orange-500 hover:before:bg-orange-500 flex-col cursor-pointer'>
-                        <img src="/html.png" alt="html" />
-                        <h1 className='font-bold text-sm'>Html</h1>
-                    </span>
-                </li>
-                <li  data-aos="fade-down" data-aos-duration="2200"  data-aos-easing="ease-out-cubic">
-                    <span href="" className='z-10 px-3 py-1 my-5 hover:bg-blue-500 hover:after:bg-blue-500 hover:before:bg-blue-500 flex-col cursor-pointer'>
-                        <img src="/css.png" alt="css" />
-                        <h1 className='font-bold text-sm'>Css</h1>
-                    </span>
-                </li>
-                <li  data-aos="fade-down" data-aos-duration="2500"  data-aos-easing="ease-out-cubic">
-                    <span href="" className='z-10 px-3 py-1 my-5 hover:bg-sky-400 hover:after:bg-sky-400 hover:before:bg-sky-400 flex-col cursor-pointer'>
-                        <img src="/tailwind.png" alt="tailwind" />
-                        <h1 className='font-bold text-sm'>Tailwind</h1>
-                    </span>
-                </li>
-                <li  data-aos="fade-down" data-aos-duration="2700"  data-aos-easing="ease-out-cubic">
-                    <span href="" className='z-10 px-3 py-1 my-5 hover:bg-yellow-300 hover:after:bg-yellow-300 hover:before:bg-yellow-300 flex-col cursor-pointer'>
-                        <img src="/js.png" alt="javascript" />
-                        <h1 className='font-bold text-sm'>JavaScript</h1>
-                    </span>
-                </li>
-                <li  data-aos="fade-down" data-aos-duration="3000"  data-aos-easing="ease-out-cubic">
-                    <span href="" className='z-10 px-3 py-1 my-5 hover:bg-sky-500 hover:after:bg-sky-500 hover:before:bg-sky-500 flex-col cursor-pointer'>
-                        <img src="/react.png" alt="react" />
-                        <h1 className='font-bold text-sm'>React</h1>
-                    </span>
-                </li>
-                <li  data-aos="fade-down" data-aos-duration="3200"  data-aos-easing="ease-out-cubic">
-                    <span href="" className='z-10 px-3 py-1 my-5 hover:bg-green-500 hover:after:bg-green-500 hover:before:bg-green-500 flex-col cursor-pointer'>
-                        <img src="/node.png" alt="node" />
-                        <h1 className='font-bold text-sm'>NodeJS</h1>
-                    </span>
-                </li>
-                <li  data-aos="fade-down" data-aos-duration="3500"  data-aos-easing="ease-out-cubic">
-                    <span href="" className='z-10 px-4 py-2 my-5 hover:bg-blue-500 hover:after:bg-blue-500 hover:before:bg-blue-500 flex-col cursor-pointer'>
-                        <img src="/python.png" alt="python" />
-                        <h1 className='font-bold '>Python</h1>
-                    </span>
-                </li>
-                <li  data-aos="fade-down" data-aos-duration="3700"  data-aos-easing="ease-out-cubic">
-                    <span href="" className='z-10 px-5 py-2 my-5 hover:bg-red-500 hover:after:bg-red-500 hover:before:bg-red-500 flex-col cursor-pointer'>
-                        <img src="/java.png" alt="java" />
-                        <h1 className='font-bold '>Java</h1>
-                    </span>
-                </li>
-                <li  data-aos="fade-down" data-aos-duration="3800"  data-aos-easing="ease-out-cubic">
-                    <span href="" className='z-10 px-5 py-2 my-5 hover:bg-blue-600 hover:after:bg-blue-600 hover:before:bg-blue-600 flex-col cursor-pointer'>
-                        <img src="/c++.png" alt="c++" />
-                        <h1 className='font-bold '>C++</h1>
-                    </span>
-                </li>
-                <li  data-aos="fade-down" data-aos-duration="3900"  data-aos-easing="ease-out-cubic">
-                    <span href="" className='z-10 px-5 py-2 my-5 hover:bg-blue-700 hover:after:bg-blue-700 hover:before:bg-blue-700 flex-col cursor-pointer'>
-                        <img src="/c.png" alt="c" />
-                        <h1 className='font-bold '>C</h1>
-                    </span>
-                </li>
-                <li  data-aos="fade-down" data-aos-duration="3900"  data-aos-easing="ease-out-cubic">
-                    <span href="" className='z-10 px-1 py-2 my-5 hover:bg-yellow-300 hover:after:bg-yellow-300 hover:before:bg-yellow-300 flex-col cursor-pointer'>
-                        <img src="/conception.png" className='w-16 h-12' alt="conception" />
-                        <h1 className='font-bold text-sm'>Conception</h1>
-                    </span>
-                </li>
-                <li  data-aos="fade-down" data-aos-duration="4000"  data-aos-easing="ease-out-cubic">
-                    <span href="" className='z-10 px-3 py-1 my-5 hover:bg-purple-500 hover:after:bg-purple-500 hover:before:bg-purple-500 flex-col cursor-pointer'>
-                        <img src="/figma.png" alt="figma" />
-                        <h1 className='font-bold text-sm'>Figma</h1>
-                    </span>
-                </li>
+               
+               
+               
+                <OneSkills title={"Html"} img={"/html.png"} bgcolor={"bg-orange-500"} animation_duration={"2000"} /> 
+                <OneSkills title={"Css"} img={"/css.png"} bgcolor={"bg-blue-500"} animation_duration={"2200"} /> 
+                <OneSkills title={"Tailwind"} img={"/tailwind.png"} bgcolor={"bg-sky-400"} animation_duration={"2500"} /> 
+                <OneSkills title={"JavaScript"} img={"/js.png"} bgcolor={"bg-yellow-300"} animation_duration={"2700"} /> 
+                <OneSkills title={"React"} img={"/react.png"} bgcolor={"bg-sky-500"} animation_duration={"3000"} /> 
+                <OneSkills title={"Angular"} img={"/angular.png"} bgcolor={"bg-red-500"} animation_duration={"3000"} /> 
+
+                <OneSkills title={"NodeJS"} img={"/node.png"} bgcolor={"bg-green-500"} animation_duration={"3200"} /> 
+                <OneSkills title={"Python"} img={"/python.png"} bgcolor={"bg-blue-500"} animation_duration={"3500"} /> 
+                <OneSkills title={"Java"} img={"/java.png"} bgcolor={"bg-red-500"} animation_duration={"3700"} /> 
+                <OneSkills title={"C++"} img={"/c++.png"} bgcolor={"bg-blue-600"} animation_duration={"3800"} /> 
+                <OneSkills title={"C"} img={"/c.png"} bgcolor={"bg-blue-700"} animation_duration={"3900"} /> 
+                <OneSkills title={"Conception"} img={"/conception.png"} bgcolor={"bg-yellow-300"} animation_duration={"3900"} /> 
+
+ 
+
+       
+ 
               
             </ul>
+            <ul className='icons-container grid lg:grid-cols-6 grid-cols-3 justify-items-center z-10 mb-16 sm:mx-24'>
+               
+               
+               
+                           <OneSkills title={"Docker"} img={"/docker.png"} bgcolor={"bg-blue-600"} animation_duration={"3900"} /> 
+               <OneSkills title={"Ansible"} img={"/ansible.png"} bgcolor={"bg-red-500"} animation_duration={"3900"} /> 
+               <OneSkills title={"kubernetes"} img={"/kubernetes.png"} bgcolor={"bg-blue-600"} animation_duration={"4000"} /> 
 
+               <OneSkills title={"Gitlab"} img={"/gitlab.png"} bgcolor={"bg-orange-500"} animation_duration={"4200"} /> 
+               <OneSkills title={"Terraform"} img={"/terraform.png"} bgcolor={"bg-purple-500"} animation_duration={"4300"} /> 
+
+               <OneSkills title={"Linux"} img={"/linux.png"} bgcolor={"bg-yellow-300"} animation_duration={"4500"} /> 
+
+
+      
+
+             
+           </ul>
         </section>
     )
 }

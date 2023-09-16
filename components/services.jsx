@@ -21,7 +21,7 @@ const Services = () => {
       <div className='bg-primary py-36 flex flex-col items-center'>
         <Title title={t('title2')} color="textAnimateWhite" />
         <div className='grid md:grid-cols-2 grid-cols-1 justify-items-center z-10'>
-          <Card img={"/webDesign.png"} title={"Web Design"} description={t('service1')} />
+          <Card img={"/webDesign.png"} title={"Devops"} description={t('service1')} />
           <Card img={"/webDev.png"} title={"Web Dev"} description={t('service2')} /> 
         </div>
       </div>
