@@ -21,17 +21,17 @@ export default function Home() {
   const [refanimation, inViewanimation] = useInView();
 
   useEffect(() => {
-    // if(inViewHeader){
-    //   router.push('/')
-    // }else if (inViewServices) {
-    //   router.push('/#services')
-    // }else if (inViewSkills) {
-    //   router.push('/#skills')
-    // }else if (inViewProjects) {
-    //   router.push('/#projects')
-    // }else if (inViewContact) {
-    //   router.push('/#contact')
-    // }
+    if(inViewHeader){
+      router.push('/')
+    }else if (inViewServices) {
+      router.push('/#services')
+    }else if (inViewSkills) {
+      router.push('/#skills')
+    }else if (inViewProjects) {
+      router.push('/#projects')
+    }else if (inViewContact) {
+      router.push('/#contact')
+    }
   }, [inViewHeader, inViewServices, inViewSkills, inViewProjects, inViewContact]);
 
   // const [currentImage, setCurrentImage] = useState(1);
@@ -99,6 +99,7 @@ export default function Home() {
         <div ref={refSkills} id="skills" className="pt-24"></div>
         <Skills />
         <div ref={refanimation} id="animation" className="pt-24"></div>
+        <div ref={refProjects} id="projects"></div>
 
         <Caroussel3D />
         <div ref={refContact} id="contact"></div>
